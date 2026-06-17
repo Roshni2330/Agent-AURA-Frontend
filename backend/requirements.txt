@@ -1,0 +1,29 @@
+# Backend dependencies for AURA AI Campaign Generator
+
+# API Framework
+fastapi==0.115.6
+uvicorn==0.32.1
+
+# LLM
+google-generativeai==0.8.3
+
+# Image Processing & Upload
+pillow==11.1.0
+cloudinary==1.42.1
+
+# Database
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+
+# Env & Config
+python-dotenv==1.0.1
+
+# Validation
+pydantic==2.10.3
+
+# HTTP Client (for image model APIs)
+httpx==0.28.1
+
+# Utilities
+uuid==1.30
+python-multipart==0.0.20
