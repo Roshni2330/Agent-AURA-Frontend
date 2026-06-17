@@ -20,6 +20,7 @@ python-dotenv==1.0.1
 
 # Validation
 pydantic==2.10.3
+pydantic-settings==2.7.0
 
 # HTTP Client (for image model APIs)
 httpx==0.28.1
