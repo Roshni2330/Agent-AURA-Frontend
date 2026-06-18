@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import campaigns, posters, polls, revisions, approval
+from app.database import Base, engine
+import app.models.campaign  # noqa: F401 — register models with Base
+import app.models.poster    # noqa: F401
+import app.models.poll      # noqa: F401
 
 # ── App ────────────────────────────────────────────────────────────────────────
 app = FastAPI(
@@ -15,6 +19,9 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
 )
+
+# Create DB tables on startup (dev only — use Alembic for production)
+Base.metadata.create_all(bind=engine)
 
 # ── CORS ───────────────────────────────────────────────────────────────────────
 # Allow the Streamlit frontend (localhost:8501) to call the API during development.
