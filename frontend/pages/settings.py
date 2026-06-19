@@ -3,8 +3,8 @@ import streamlit as st
 from components.sidebar import show_sidebar
 from utils.styles import load_css
 
-show_sidebar()
 load_css()
+show_sidebar()
 
 st.title("⚙ Settings")
 

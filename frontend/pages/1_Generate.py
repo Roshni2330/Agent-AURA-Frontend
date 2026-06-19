@@ -1,21 +1,31 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="Agent AURA",
+    layout="wide"
+)
+
+from components.sidebar import show_sidebar
+from utils.styles import load_css
+
 from components.poster_viewer import show_poster
 from components.poster_content import show_poster_content
 from components.poll_viewer import show_poll
 from components.feedback_form import feedback_form
 from components.revision_plan import show_revision_plan
 
-from components.sidebar import show_sidebar
-from utils.styles import load_css
-
 from utils.session import initialize_session
 from utils.logger import log_info
 
-show_sidebar()
 load_css()
+show_sidebar()
 
 initialize_session()
+
+st.image(
+    "frontend/assets/tata_logo.png",
+    width=180
+)
 
 st.title("🤖 Agent AURA")
 

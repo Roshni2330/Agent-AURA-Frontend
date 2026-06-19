@@ -1,38 +1,57 @@
-.main {
-    background-color: #0e1117;
+.stApp {
+    background-color: #ffffff;
 }
 
-.card {
-    background: #262730;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    margin-bottom: 15px;
-    border: 1px solid #3a3b45;
+/* Main text */
+html,
+body,
+[class*="css"] {
+    color: #0A2E6D;
 }
 
-.card h1 {
-    color: #4da6ff;
-    font-size: 48px;
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #0057B8 !important;
+    font-weight: 700;
 }
 
-.card h3 {
-    color: white;
-}
-
-.card p {
-    color: #cccccc;
-}
-
-.box {
-    background: #262730;
-    padding: 25px;
-    border-radius: 15px;
-    min-height: 250px;
-    border: 1px solid #3a3b45;
-    color: white;
-}
-
+/* Sidebar */
 section[data-testid="stSidebar"] {
-    background-color: #0e1117;
+    background-color: #F5F8FF;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #0057B8;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.stButton > button:hover {
+    background-color: #003E82;
+    color: white;
+}
+
+/* Text Input */
+.stTextInput input {
+    background-color: white;
+    color: #0A2E6D;
+    border: 1px solid #0057B8;
+}
+
+/* Labels */
+label {
+    color: #0057B8 !important;
+    font-weight: 600;
+}
+
+/* Hide Streamlit default pages navigation */
+[data-testid="stSidebarNav"] {
+    display: none !important;
 }

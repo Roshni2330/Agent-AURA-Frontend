@@ -1,10 +1,16 @@
 import streamlit as st
+import os
 
 def load_css():
 
-    with open(
-        "assets/style.css"
-    ) as f:
+    css_path = os.path.join(
+        os.path.dirname(__file__),
+        "..",
+        "assets",
+        "style.css"
+    )
+
+    with open(css_path) as f:
 
         st.markdown(
             f"<style>{f.read()}</style>",
