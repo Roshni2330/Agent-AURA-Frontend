@@ -22,15 +22,10 @@ show_sidebar()
 
 initialize_session()
 
-st.image(
-    "frontend/assets/tata_logo.png",
-    width=180
-)
-
 st.title("🤖 Agent AURA")
 
 st.subheader(
-    "Campaign Content Generator"
+    "Creating content for Aura community."
 )
 
 topic = st.text_input(
