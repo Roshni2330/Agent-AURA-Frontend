@@ -3,9 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import campaigns, posters, polls, revisions, approval
 from app.database import Base, engine
-import app.models.campaign  # noqa: F401 — register models with Base
-import app.models.poster    # noqa: F401
-import app.models.poll      # noqa: F401
+import app.models.campaign   # noqa: F401 — register models with Base
+import app.models.poster     # noqa: F401
+import app.models.poll       # noqa: F401
+import app.models.revision   # noqa: F401
 
 # ── App ────────────────────────────────────────────────────────────────────────
 app = FastAPI(

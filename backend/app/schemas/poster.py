@@ -15,6 +15,7 @@ class PosterStatus(str, Enum):
     approved           = "approved"            # Human approved
     rejected           = "rejected"            # Human permanently rejected
     revision_requested = "revision_requested"  # Human requested a change
+    failed             = "failed"              # Image generation/upload failed
 
 
 # ── Requests ───────────────────────────────────────────────────────────────────

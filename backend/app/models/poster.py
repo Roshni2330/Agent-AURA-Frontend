@@ -11,7 +11,8 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.database import Base
 
 if TYPE_CHECKING:
-    from app.models.campaign import Campaign  # only used by the type checker
+    from app.models.campaign import Campaign   # only used by the type checker
+    from app.models.revision import Revision   # only used by the type checker
 
 
 class Poster(Base):
@@ -41,7 +42,7 @@ class Poster(Base):
     text_overlay: Mapped[str] = mapped_column(String(200), nullable=False)
 
     # ── Status & versioning ───────────────────────────────────────────────────
-    # "generating" → "pending" → "approved" | "rejected" | "revision_requested"
+    # "generating" → "pending" → "approved" | "rejected" | "revision_requested" | "failed"
     status: Mapped[str] = mapped_column(
         String(30), nullable=False, default="generating"
     )
@@ -58,6 +59,12 @@ class Poster(Base):
     campaign: Mapped["Campaign"] = relationship(
         "Campaign", back_populates="posters"
     )  # noqa: F821
+    revisions: Mapped[list["Revision"]] = relationship(
+        "Revision",
+        foreign_keys="Revision.poster_id",
+        back_populates="original_poster",
+        cascade="all, delete-orphan",
+    )
 
     def __repr__(self) -> str:
         return f"<Poster id={self.id} campaign={self.campaign_id} day={self.day} status={self.status!r}>"

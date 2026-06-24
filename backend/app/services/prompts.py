@@ -27,6 +27,7 @@ REVISION_SYSTEM_PROMPT: str = (
 # ── User prompt builders ───────────────────────────────────────────────────────
 # Functions that accept runtime values and return the filled-in user prompt.
 
+
 def build_campaign_prompt(topic: str, objective: str) -> str:
     """User prompt for generate_campaign_plan()."""
     return f"""

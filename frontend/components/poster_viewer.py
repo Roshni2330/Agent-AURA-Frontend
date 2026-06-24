@@ -2,7 +2,7 @@ import streamlit as st
 
 def show_poster():
 
-    st.subheader("🖼 Poster Preview")
+    st.subheader("Poster Preview")
 
     st.info(
         """

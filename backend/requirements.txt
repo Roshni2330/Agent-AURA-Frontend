@@ -5,8 +5,10 @@ fastapi==0.115.6
 uvicorn==0.32.1
 
 # ── LLM ──────────────────────────────────────────────────────────────────────
-# google-generativeai 0.8.x supports Gemini 2.5 Flash via the v1beta API
+# google-generativeai 0.8.x — used for Gemini Flash (text/planning)
 google-generativeai==0.8.3
+# google-genai 2.x — new unified SDK required for gemini-2.5-flash-image
+google-genai==2.9.0
 
 # ── Image Processing & Upload ─────────────────────────────────────────────────
 pillow==11.1.0
@@ -19,7 +21,7 @@ alembic==1.14.0             # DB migrations
 
 # ── Config & Environment ──────────────────────────────────────────────────────
 python-dotenv==1.0.1
-pydantic==2.10.3
+pydantic==2.13.4
 pydantic-settings==2.7.0
 
 # ── HTTP Client (for image model APIs) ───────────────────────────────────────
